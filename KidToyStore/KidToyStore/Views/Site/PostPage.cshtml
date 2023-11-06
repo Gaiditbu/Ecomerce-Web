@@ -1,0 +1,38 @@
+﻿@model WatchStore.Models.MPost
+@{
+    ViewBag.Title = Model.Title;
+    Layout = "~/Views/Shared/_LayoutSite.cshtml";
+}
+<div class="post-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <p>
+                    Chào bạn, Flamie là một doanh nghiệp bán lẻ quần áo được thành lập tại Việt Nam. Chúng tôi cung cấp các sản phẩm thời trang chất lượng cao với nhiều kiểu dáng, mẫu mã và kích thước phong phú để phục vụ nhu cầu của khách hàng.
+
+                    Các sản phẩm của Flamie bao gồm các loại quần áo như áo thun, áo sơ mi, áo khoác, quần jean, quần short, váy đầm,...và được làm từ các loại vải chất lượng như cotton, linen, silk, denim,... đảm bảo tính thoáng mát, thoải mái và đáp ứng được nhiều phong cách khác nhau.
+
+                    Chúng tôi luôn cập nhật xu hướng thời trang mới nhất để đáp ứng sự đa dạng của thị trường và đem lại cho khách hàng những trải nghiệm mua sắm tuyệt vời với sản phẩm chất lượng và dịch vụ tốt nhất. Ngoài ra, chúng tôi cũng cam kết với khách hàng về chính sách đổi trả linh hoạt và dịch vụ hỗ trợ sau bán hàng chuyên nghiệp.
+
+                    Cảm ơn bạn đã quan tâm đến Flamie, nếu bạn cần thêm thông tin hay có bất kỳ câu hỏi nào về sản phẩm của chúng tôi, hãy liên hệ với chúng tôi để được hỗ trợ!
+                </p>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <h2 style="color:darkgoldenrod">Xem thêm</h2>
+                @Html.Action("PListPage", "Module")
+                <div class="fb-comments" data-href="@Request.Url.GetLeftPart(UriPartial.Path)" data-width="100%" data-numposts=""></div>
+
+            </div>
+            <div class="col-md-2">
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
