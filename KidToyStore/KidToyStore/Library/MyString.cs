@@ -46,7 +46,15 @@ namespace WatchStore
                                  new String[] { "[ýỳỷỹỵ]", "y" },
                                  new String[] { "[\\s'\";,]", "-" }
                              };
-            s = s.ToLower();
+            if (s != null)
+            {
+                s = s.ToLower();
+            }
+            else
+            {
+                // Xử lý nếu s là null (ví dụ, gán một giá trị mặc định hoặc log lỗi)
+                s = string.Empty; // Hoặc một giá trị mặc định khác
+            };
             foreach (var ss in symbols)
             {
                 s = Regex.Replace(s, ss[0], ss[1]);

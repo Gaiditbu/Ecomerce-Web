@@ -16,51 +16,58 @@
                 <!-- BSTORE-BREADCRUMB END -->
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <h2 class="page-title contant-page-title">Nếu có góp ý bạn hãy đóng góp ý kiến bên dưới cho Shop</h2>
-            </div>
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <!-- CONTACT-US-FORM START -->
-                <div class="contact-us-form">
-                    <div class="contact-form-center">
-                        <h3 class="contact-subheading"></h3>
-                        <!-- CONTACT-FORM START -->
-                        <form class="contact-form" id="contactForm" method="POST" action="Site/SubmitContact">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+        <div class="contact-section" style="padding: 100px 0; background-color: #f9f9f9; font-family: Arial, sans-serif;">
+            <div class="container" style="max-width: 1200px; margin: 0 auto;">
+                <h2 style="font-size: 2.5rem; color: #333; margin-bottom: 20px; text-align: center;">Đóng góp ý kiến</h2>
+                <p style="font-size: 1.2rem; color: #555; margin-bottom: 40px; text-align: center;">Nếu có góp ý, bạn hãy để lại thông tin và ý kiến bên dưới. Chúng tôi luôn sẵn sàng lắng nghe!</p>
 
-                                    <div class="form-group primary-form-group">
-                                        <label>Tên</label>
-                                        <input type="text" class="form-control input-feild" id="contactEmail" name="Fullname" value="">
-                                    </div>
-                                    <div class="form-group primary-form-group">
-                                        <label>Email</label>
-                                        <input type="email" class="form-control input-feild" id="contactEmail" name="Email" value="">
-                                    </div>
-                                    <div class="form-group primary-form-group">
-                                        <label>Số điện thoại</label>
-                                        <input type="text" class="form-control input-feild" id="contactEmail" name="Phone" value="">
-                                    </div>
-                                    <div class="form-group primary-form-group">
-                                        <label>Tiêu đề liên hệ</label>
-                                        <input type="text" class="form-control input-feild" id="contactEmail" name="Title" value="">
-                                    </div>
-                                    <button type="submit" name="submit" id="sendMessage" class="send-message main-btn">Send <i class="fa fa-chevron-right"></i></button>
-                                </div>
-                                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
-                                    <div class="type-of-text">
-                                        <div class="form-group primary-form-group">
-                                            <label>Nội dung liên hệ</label>
-                                            <textarea class="contact-text" name="Detail"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
+                <!-- Phần row chứa form và bản đồ -->
+                <div class="row" style="display: flex; flex-wrap: nowrap; gap: 20px; align-items: stretch;">
+                    <!-- Form -->
+                    <div class="col" style="flex: 0 0 33%; text-align: left; background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                        <form class="contact-form" id="contactForm" method="POST" action="Site/SubmitContact">
+                            <div class="form-group" style="margin-bottom: 15px;">
+                                <label for="Fullname" style="font-weight: bold;">Tên</label>
+                                <input type="text" id="Fullname" name="Fullname" class="form-control" placeholder="Nhập tên của bạn" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
                             </div>
+                            <div class="form-group" style="margin-bottom: 15px;">
+                                <label for="Email" style="font-weight: bold;">Email</label>
+                                <input type="email" id="Email" name="Email" class="form-control" placeholder="Nhập email của bạn" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                            </div>
+                            <div class="form-group" style="margin-bottom: 15px;">
+                                <label for="Phone" style="font-weight: bold;">Số điện thoại</label>
+                                <input type="text" id="Phone" name="Phone" class="form-control" placeholder="Nhập số điện thoại của bạn" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                            </div>
+                            <div class="form-group" style="margin-bottom: 15px;">
+                                <label for="Title" style="font-weight: bold;">Tiêu đề liên hệ</label>
+                                <input type="text" id="Title" name="Title" class="form-control" placeholder="Nhập tiêu đề liên hệ" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                            </div>
+                            <div class="form-group" style="margin-bottom: 15px;">
+                                <label for="Detail" style="font-weight: bold;">Nội dung liên hệ</label>
+                                <textarea id="Detail" name="Detail" class="form-control" rows="5" placeholder="Nhập nội dung liên hệ" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;"></textarea>
+                            </div>
+                            <button type="submit" name="submit"
+                                    style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1rem; transition: 0.3s;"
+                                    onmouseover="this.style.backgroundColor='#0056b3'; this.style.transform='scale(1.05)';"
+                                    onmouseout="this.style.backgroundColor='#007bff'; this.style.transform='scale(1)';">
+                                Gửi đi
+                            </button>
                         </form>
+                    </div>
+
+                    <!-- Map -->
+                    <div class="col" style="flex: 0 0 60%; height: 670px; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3298417865983!2d106.6666583147197!3d10.780652992318604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ef54a61a345%3A0x80d4c897e58e4ce9!2zSMOgIFRydXnDqm4gTmjhuq1jIFThu7EgeMOjYyBUUC5IQ00gKEhVRkxJVCkgLSBTxqFuIFbEg24gSG_DoG5oLCBC4bqvYyBuaOG6pXAgVHLGsOG7nW5n!5e0!3m2!1svi!2s!4v1701204827000!5m2!1svi!2s"
+                                width="100%"
+                                height="100%"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy">
+                        </iframe>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 </section>
