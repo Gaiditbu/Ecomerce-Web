@@ -122,6 +122,41 @@ namespace WatchStore.Controllers
             return View();
         }
         [HttpPost]
+        public ActionResult CancelOrder(int orderId)
+        {
+            if (Session["User_ID"] == null)
+            {
+                return Json(new { success = false, message = "Vui lòng đăng nhập để thực hiện chức năng này." });
+            }
+
+            try
+            {
+                int userId = Convert.ToInt32(Session["User_ID"]);
+                var order = db.Orders.FirstOrDefault(o => o.Id == orderId && o.CustemerId == userId);
+
+                if (order == null)
+                {
+                    return Json(new { success = false, message = "Đơn hàng không tồn tại hoặc không thuộc về bạn." });
+                }
+
+                if (order.Status == 3) // Đơn hàng đã hoàn thành
+                {
+                    return Json(new { success = false, message = "Không thể hủy đơn hàng đã hoàn thành." });
+                }
+
+                // Cập nhật trạng thái đơn hàng thành "Đã hủy" (Status = 0)
+                order.Status = 0;
+                db.SaveChanges();
+
+                return Json(new { success = true, message = "Đơn hàng đã được hủy thành công." });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = "Có lỗi xảy ra: " + ex.Message });
+            }
+        }
+
+        [HttpPost]
         public JsonResult Register(MUser user)
         {
             try

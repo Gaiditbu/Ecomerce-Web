@@ -66,12 +66,31 @@
                                     <li><small style="font-size:16px;">Giá tiền &nbsp;@String.Format("{0:0,0₫}", v.Price)</small></li>
                                 }
                             }
-                                    <li><small style="font-size:16px; color:red;" >Tổng số tiền &nbsp;@String.Format("{0:0,0₫}", @String.Format("{0:0,0₫}", Total))</small></li>
+                                    <li><small style="font-size:16px; color:red;">Tổng số tiền &nbsp;@String.Format("{0:0,0₫}", @String.Format("{0:0,0₫}", Total))</small></li>
                                     </li>
+                                    <div class="add-new-address">
+                                        <form action="~/account/cancelorder" method="post">
+                                            <input type="hidden" name="orderId" value="@i.Id" />
+                                            @if (i.Status == 1 || i.Status == 2)
+                                            {
+                                                <!-- Chỉ hiển thị nút khi đơn hàng chưa hoàn thành -->
+                                                <button type="submit" class="btn btn-danger" style="margin-top: 3 px">Hủy Đơn Hàng</button>
+                                            }
+                                            else if (i.Status == 0)
+                                            {
+                                                <span class="text-danger">Đã hủy</span>
+                                            }
+                                            else if (i.Status == 3)
+                                            {
+                                                <span class="text-success">Đã hoàn thành</span>
+                                            }
+                                        </form>
+                                    </div>
 
                                 </ul>
                                 <!-- DELIVERY ADDRESS END -->
                             </div>
+
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <div class="second_item primari-box">
@@ -96,6 +115,8 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="add-new-address">
                                 @*<a href="~/account/orderdetails/@i.Id" class="new-address-link">Chi tiết đơn hàng<i class="fa fa-chevron-right"></i></a>*@
+                                
+
                             </div>
                         </div>
                     </div>
